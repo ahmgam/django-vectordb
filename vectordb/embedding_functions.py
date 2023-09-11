@@ -52,4 +52,4 @@ class OpenAIEmbeddings:
         return response["data"][0]["embedding"]
 
     def __call__(self, text):
-        return self.get_embedding(text, self.model)
+        return self.get_embedding(text)
