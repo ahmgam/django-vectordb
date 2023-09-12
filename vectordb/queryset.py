@@ -77,7 +77,7 @@ class VectorQuerySet(models.QuerySet):
     def related_text(self, text: str, k: int | None = None):
         vectors = self
         ids_list = [vector.id for vector in vectors]
-        query_embeddings = self.model.objects.embedding_fn([text])
+        query_embeddings = self.model.objects.embedding_fn(text)
         return self._get_related_vectors(query_embeddings, vectors, k, ids_list)
 
     def related_objects(self, model_object, k: int | None = None):
